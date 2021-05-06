@@ -1,0 +1,61 @@
+{
+  "name": "clinix",
+  "version": "1.0.3",
+  "description": "Clinix.mx",
+  "keywords": [
+    "Clinix",
+    "consulta médica",
+    "telemedicina"
+  ],
+  "author": "DFSOFT SA de CV",
+  "license": "MIT",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfsoftmx/clinixdesktop.git"
+  },
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "devDependencies": {
+    "electron": "11.2.3",
+    "electron-builder": "^22.11.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "electron-store": "^7.0.2",
+    "electron-updater": "^4.3.8",
+    "jquery": "^3.5.1",
+    "jsonfile": "^6.1.0"
+  },
+  "build": {
+    "productName": "Clinix",
+    "appId": "mx.dfsoft.clinix",
+    "copyright": "Copyright © 2020 DFSOFT SA de CV",
+    "publish": {
+      "provider": "github"
+    },
+    "directories": {
+      "output": "out/build"
+    },
+    "files": [
+      "!out/*"
+    ],
+    "mac": {
+      "category": "public.app-category.medical",
+      "icon": "build/Icon.icns"
+    },
+    "nsis": {
+      "deleteAppDataOnUninstall": true,
+      "uninstallDisplayName": "Clinix",
+      "artifactName": "${productName}Installer.${ext}"
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  }
+}

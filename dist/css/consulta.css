@@ -1,0 +1,185 @@
+/* Vistas de la pantalla consulta */
+.consulta .view-container{
+    margin: 20px auto;
+    width: calc(100% - 38px);
+    height: calc(100% - 140px);
+}
+.consulta .view-container>div{
+    margin-right: 30px;
+    display: block;
+    height: calc(100vh - 150px);
+    max-height: calc(50vh - 90px);
+    border-radius: 20px;
+    float: left;
+    width: calc(35vw - 21px);
+}
+.view-container .waiting-list ul{
+    margin-top: 50px;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 220px);
+}
+.view-container .waiting-list li{
+    padding: 15px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 15px 2px rgba(0,0,0,0.15);
+}
+.view-container .waiting-list li .btn{
+    padding: 0px;
+    margin-left: 10px;
+    float: right;
+    width: 32px;
+    height: 32px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+.view-container .waiting-list li .btn .icon-mask{
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+}
+button.btn-close .icon-mask{
+    mask: url(../img/logout.svg) no-repeat center;
+    -webkit-mask: url(../img/logout.svg) no-repeat center;
+    -webkit-mask-size: 59%;
+    background-color: #fff;
+    margin: -2px 0 0 0;
+}
+button.btn-pause .icon-mask{
+    mask: url(../img/music_pause_button.svg) no-repeat center;
+    -webkit-mask: url(../img/music_pause_button.svg) no-repeat center;
+    -webkit-mask-size: 101%;
+    background-color:#fff;
+    margin: -2px 0 0 -2px;
+}
+button.btn-restart .icon-mask{
+    mask: url(../img/arrows_restartprocess.svg) no-repeat center;
+    -webkit-mask: url(../img/arrows_restartprocess.svg) no-repeat center;
+    -webkit-mask-size: 60%;
+    background-color: #fff;
+    margin: -2px 0 0 -2px;
+}
+
+.view-container .waiting-list li .btn:hover .icon-mask{
+    background-color:#fff;
+}
+.consulta .view-container div:last-child{
+    margin-right: 0px;
+}
+
+.consulta .view-container .waiting-list{
+    max-height: calc(100vh - 150px);
+    width: calc(65vw - 51px);
+    padding: 0px;
+}
+.consulta .view-container .video-viewer-medic{
+    margin-top: 30px;
+    margin-right: 0px;
+    overflow: hidden;
+}
+.consulta .view-container .video-viewer-patient{
+    margin-right: 0px;
+    overflow: hidden;
+}
+.consulta .view-container .current-chat-box{
+    margin-top: 30px;
+    display: none;
+    margin-right: 0px;
+}
+.chat-content, #chat-message-input{
+    display: block;
+    width: 100%;
+}
+.chat-content{
+    margin: 35px 0 10px;
+    padding: 20px;
+    height: calc(100% - 86px);
+    overflow-y: auto;
+}
+
+#chat-message-input input{
+    padding: 10px 15px;
+    border: none;
+    background-color: rgba(0,0,0,0.07);
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.chat-content .messg{
+    text-align: left;
+    margin: 5px 30px 5px 0px;
+    line-height: 30px;
+}
+.chat-content .messg span{
+    padding: 0px 7px;
+    background-color: #86BFDE;
+    font-size: 13px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: inline-block;
+}
+.chat-content .messg.titular{
+    text-align: right;
+    margin: 5px 0px 5px 30px;
+}
+.chat-content .messg.titular span{
+    background-color: #C9508D;
+    color:#fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0px;
+}
+.video-viewer-medic h3, .video-viewer-patient h3{
+    position: absolute;
+    z-index: 50;
+    margin-top: 0px;
+    color: #f4f4f4;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+#video-patient video, .video-viewer-medic video{
+    width: inherit;
+}
+#video-patient{
+    padding: 0px;
+    width: inherit;
+}
+.consulta.no_distractions .view-container .waiting-list{
+    display: none;
+}
+.consulta.no_distractions .view-container .video-viewer-patient{
+    max-height: calc(100vh - 150px);
+    width: calc(65vw - 51px);
+    margin-right: 30px;
+}
+.consulta.no_distractions #video-patient video{
+    width: calc(65vw - 51px);
+}
+.consulta.no_distractions .view-container .video-viewer-medic{
+    margin-top: 0px;
+}
+.consulta.no_distractions .view-container .current-chat-box{
+    display: block;
+}
+.consulta.full_view .view-container>div{
+    width: calc(33vw - 31px);
+}
+.consulta.full_view .view-container .video-viewer-medic{
+    float: none;
+    position: absolute;
+    margin-left: calc(33vw - 1px);
+    top: calc(50vh + 34px);
+}
+.consulta.full_view .view-container .current-chat-box{
+    display: block;
+    position: absolute;
+    margin-top: 0px;
+    max-height: calc(100vh - 150px);
+    float: none;
+    top: 124px;
+    right: 30px;
+}
