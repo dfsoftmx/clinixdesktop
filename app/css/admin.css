@@ -1,0 +1,48 @@
+/* Vistas de la pantalla admin */
+.admin #topmenu .vertical-separator{
+	height: 40px;
+}
+.admin .view-container{
+    margin: 20px auto;
+    width: calc(100% - 38px);
+    height: calc(100% - 102px);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0px;
+}
+.admin .view-container h4{
+    padding: 5px 10px;
+    font-family: 'Quicksand', Arial;
+}
+.admin .view-container>div{
+    display: flex;
+    height: calc(50vh - 65px);
+    float: left;
+    width: calc(30vw - 21px);
+    border-left: 1px dotted rgba(255,255,255,0.1);
+    border-bottom: 1px dotted rgba(255,255,255,0.1);
+}
+.admin .view-container .lists-wl{
+	height: calc(100vh - 130px);
+    width: calc(70vw - 21px);
+}
+.admin .view-container .lists-wl>div{
+    padding: 10px 0px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+.admin .view-container .lists-wl li{
+    background-color: rgba(19,79,181,0.1);
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+.admin .view-container .lists-wl li.active{
+    background-color: rgba(19,79,181,0.5);
+}
+.admin .view-container .list-container{
+    overflow-y: auto;
+    max-height: calc(100% - 35px);
+}
+#topmenu .btn{
+	margin: 0px 20px;
+}
