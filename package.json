@@ -1,6 +1,6 @@
 {
   "name": "clinix",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Clinix.mx",
   "keywords": [
     "Clinix",
@@ -9,17 +9,21 @@
   ],
   "author": "DFSOFT SA de CV",
   "license": "MIT",
-  "main": "static/main.js",
+  "main": "app/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/dfsoftmx/clinixdesktop.git"
   },
+  "files": [
+    "package.json",
+    "app/**/*",
+    "node_modules",
+    "!dist/*"
+  ],
   "scripts": {
-    "start": "electron-builder start",
-    "pack": "electron-builder --dir",
+    "start": "electron --trace-warnings .",
     "dist": "electron-builder",
-    "dep": "electron-builder install-app-deps",
-    "rebuild": "electron-builder node-gyp-rebuild",
+    "pack": "electron-builder --dir",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always"
   },
@@ -28,34 +32,18 @@
     "electron-builder": "^22.11.1"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
     "electron-log": "^4.3.5",
     "electron-store": "^7.0.2",
-    "electron-updater": "^4.3.8",
-    "jquery": "^3.5.1",
-    "jsonfile": "^6.1.0"
+    "electron-updater": "^4.3.8"
   },
   "build": {
     "productName": "Clinix",
     "appId": "mx.dfsoft.clinix",
     "copyright": "Copyright © 2020 DFSOFT SA de CV",
-    "publish": {
-      "provider": "github",
-      "owner": "dfsoftmx",
-      "project": "clinixdesktop"
-    },
-    "directories": {
-      "output": "out/build",
-      "buildResources": "static"
-    },
-    "files": [
-      "**/*",
-      "static/*",
-      "!out/*"
-    ],
     "mac": {
       "category": "public.app-category.medical",
-      "icon": "static/icons/Icon.icns",
+      "icon": "app/icons/Icon.icns",
+      "artifactName": "${productName}MacOS.${ext}",
       "entitlements": "build/entitlements.mac.plist",
       "extendInfo": {
         "NSCameraUsageDescription": "Esta aplicación requiere acceso a la cámara para las videoconferencias.",
@@ -65,11 +53,11 @@
     "nsis": {
       "deleteAppDataOnUninstall": true,
       "uninstallDisplayName": "Clinix",
-      "artifactName": "${productName}Installer.${ext}"
+      "artifactName": "${productName}WinInstaller.${ext}"
     },
     "win": {
       "target": "NSIS",
-      "icon": "static/icons/icon.ico"
+      "icon": "app/icons/icon.ico"
     }
   }
 }
